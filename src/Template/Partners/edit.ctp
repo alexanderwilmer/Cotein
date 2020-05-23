@@ -6,7 +6,7 @@
 ?>
  
 <div class="partners form large-9 medium-8 columns content">
-    <?= $this->Form->create($partner) ?>
+    <?= $this->Form->create($partner ,['type'=>'file'   ] ) ?>
     <fieldset>
         <legend><?= __('Edit Partner') ?></legend>
         <?php

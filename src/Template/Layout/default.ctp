@@ -67,6 +67,8 @@ $cakeDescription = 'COTEIN ADMIN';
         <li><?= $this->Html->link(__('Lista Sliders'), ['controller' => 'Sliders', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('Lista Patners'), ['controller' => 'Partners', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('Lista Logros'), ['controller' => 'Logros', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Que hacemos'), ['controller' => 'Funciones', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Habilidades'), ['controller' => 'Habilidades', 'action' => 'index']) ?></li>
 
     </ul>
 </nav>

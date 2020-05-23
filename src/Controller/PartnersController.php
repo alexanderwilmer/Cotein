@@ -64,7 +64,7 @@ class PartnersController extends AppController
             $filename=$time.'-'.$file['imagen']['name'];
             $file['imagen']['name'] = $filename;
             $data['path']=$filename;
-            $result= $this->Upload->send($file['imagen'],"sliders",$filename);
+            $result= $this->Upload->send($file['imagen'],"partners",$filename);
 
             $partner = $this->Partners->patchEntity($partner, $data) ;
             print_r($partner->errors());
@@ -91,7 +91,30 @@ class PartnersController extends AppController
             'contain' => [],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $partner = $this->Partners->patchEntity($partner, $this->request->getData());
+            
+            $data = $this->request->data;
+            try {
+                $result=true;
+                if(empty($data["imagen"]["name"])){
+                       unset($data["path"]);
+                }else{
+                    $time = time();
+                    $file= $this->request->data;
+                    $filename=$time.'-'.$file['imagen']['name'];
+                    $file['imagen']['name'] = $filename;
+                    $data['path']=$filename;
+                    $result= $this->Upload->send($file['imagen'],"partners",$filename);
+                } 
+            } catch (Exception $e) {
+                
+            }
+
+
+            $partner = $this->Partners->patchEntity($partner, $data);
+
+
+
+
             if ($this->Partners->save($partner)) {
                 $this->Flash->success(__('The partner has been saved.'));
 

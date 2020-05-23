@@ -20,6 +20,17 @@ class PrincipalController extends AppController
     public function index()
     {
          $this->viewBuilder()->layout('publico');
+        $this->loadModel('Funciones');
+        $this->loadModel('Habilidades');
+        $this->loadModel('Empresas');
+        $this->loadModel('Partners');
+        $funciones=$this->Funciones->find('list', ['limit' => 200]);
+        $habilidades=$this->Habilidades->find('list', ['limit' => 200]);
+        $empresas=$this->Empresas->find('list', ['limit' => 200]);
+        $partners=$this->Partners->find('list', ['limit' => 200]);
+
+
+        $this->set(compact('funciones', 'habilidades', 'empresas','partners'));
 
          
     }

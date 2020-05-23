@@ -46,7 +46,16 @@ class ProductosController extends AppController
 
     public function producto()
     {
+
+
+        $this->viewBuilder()->layout('publico');
        
+        $this->paginate = [
+            'contain' => ['Marcas', 'Tipos'],
+        ];
+        $productos = $this->paginate($this->Productos);
+
+        $this->set(compact('productos'));
     }
 
     /**
