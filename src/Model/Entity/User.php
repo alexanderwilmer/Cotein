@@ -32,16 +32,10 @@ class User extends Entity
         'modified' => true,
     ];
 
-     protected $_accessible = ['*' => true];
 
     // ...
 
-    protected function _setPassword($password)
-    {
-        if (strlen($password) > 0) {
-            return (new DefaultPasswordHasher)->hash($password);
-        }
-    }
+  
 
 
     /**
