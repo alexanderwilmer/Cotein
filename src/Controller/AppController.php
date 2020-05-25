@@ -46,10 +46,57 @@ class AppController extends Controller
         ]);
         $this->loadComponent('Flash');
 
+        $this->loadModel('Empresas');
+        $empresa=$this->Empresas->find()->first();
+        $this->set('empresa', $empresa);
+
+        $this->loadComponent('Auth', [
+            'loginRedirect' => [
+                'controller' => 'Principal',
+                'action' => 'index'
+            ],
+            'logoutRedirect' => [
+                'controller' => 'Users',
+                'action' => 'login',
+                'home'
+            ]
+        ]);
+
         /*
          * Enable the following component for recommended CakePHP security settings.
          * see https://book.cakephp.org/3.0/en/controllers/components/security.html
          */
         //$this->loadComponent('Security');
     }
+ 
+
+    public function IsAutirizado($permiso){
+       if($permiso!=1){  
+            $this->Flash->success(__('No tiene permiso para entrar en esta acción'));  
+            $this->redirect(array('controller' => 'users', 'action' => 'login'));
+        }
+    }
+
+    /**
+     * Before render callback.
+     *
+     * @param \Cake\Event\Event $event The beforeRender event.
+     * @return void
+     */
+    public function beforeRender(Event $event)
+    {
+        if (!array_key_exists('_serialize', $this->viewVars) &&
+            in_array($this->response->type(), ['application/json', 'application/xml'])
+        ) {
+            $this->set('_serialize', true);
+        }
+    }
+
+
+     public function beforeFilter(Event $event)
+    {
+       // $this->Auth->allow(['index', 'view', 'display']);
+    }
+   
+    //...
 }

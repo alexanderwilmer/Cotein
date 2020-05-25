@@ -54,6 +54,10 @@ class EmpresasTable extends Table
             ->notEmptyString('name');
 
         $validator
+            ->scalar('descripcion')
+            ->allowEmptyString('descripcion');
+
+        $validator
             ->scalar('mision')
             ->requirePresence('mision', 'create')
             ->notEmptyString('mision');
@@ -77,8 +81,7 @@ class EmpresasTable extends Table
         $validator
             ->scalar('telefono')
             ->maxLength('telefono', 255)
-            ->requirePresence('telefono', 'create')
-            ->notEmptyString('telefono');
+            ->allowEmptyString('telefono');
 
         $validator
             ->scalar('valores')

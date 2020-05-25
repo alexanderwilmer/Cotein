@@ -58,7 +58,10 @@ class MarcasTable extends Table
             ->maxLength('name', 255)
             ->requirePresence('name', 'create')
             ->notEmptyString('name');
-
+        $validator
+            ->scalar('descripcion')
+            ->requirePresence('descripcion', 'create')
+            ->notEmptyString('descripcion');
         $validator
             ->scalar('path')
             ->maxLength('path', 255)

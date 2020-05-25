@@ -81,11 +81,11 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="#about-us" >Nosotros</a></li>
-                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="/#">Inicio</a></li>
+                    <li><a href="/#about-us" >Nosotros</a></li>
+                    <li><a href="/#services">Servicios</a></li>
                     <li><a href="/productos/producto">Productos</a></li>
-                    <li><a href="/">Contactenos</a></li>
+                    <li><a href="/#contact">Contactenos</a></li>
                  
                     <li><span class="search-trigger"><i class="fa fa-search"></i></span></li>
                 </ul>
@@ -106,20 +106,23 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-6 about-us-widget">
                         <h4>COTEIN</h4>
-                        <p>WVendemos instrumentos para análisis químico,soporte técnico y analítico,reactivos,cristaleria etc. Puede contactarnos a: cotein@cablecolor.hn y arquimia05@yahoo.com</p>
+                        <p style="max-height: 100px; overflow: hidden;"> <?= h($empresa->descripcion) ?>.</p>
+                        <p> <?= h($empresa->correo) ?>.</p>
+
                     </div><!--/.col-md-3-->
 
                     <div class="col-md-3 col-sm-6">
-                        <h4>Company</h4>
+                        <h4>Cotein</h4>
                         <div>
                             <ul class="arrow">
-                                <li><a href="#">Company Overview</a></li>
-                                <li><a href="#">Meet The Team</a></li>
-                                <li><a href="#">Our Awesome Partners</a></li>
-                                <li><a href="#">Our Services</a></li>
+                                <li><a href="/">Inicio</a></li>
+                                <li><a href="#about-us" >Nosotros</a></li>
+                                <li><a href="#services">Servicios</a></li>
+                                <li><a href="/productos/producto">Productos</a></li>
+                                <li><a href="#contact">Contactenos</a></li> 
                             </ul>
                         </div>
-                    </div><!--/.col-md-3-->
+                    </div><!-- 
 
                     <div class="col-md-3 col-sm-6">
                         <h4>Latest Articles</h4>
@@ -143,12 +146,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div><!--/.col-md-3-->
+                    </div> -->
 
                     <div class="col-md-3 col-sm-6">
                         <h4>Puede contactarnos a:</h4>
                         <address>
-                         cotein@cablecolor.hn ,<br> arquimia05@yahoo.com<br>
+                         <?= h($empresa->correo) ?> 
+
+                        
                         </address>
                     </div> <!--/.col-md-3-->
                 </div>
@@ -159,7 +164,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8">
-                        &copy; 2019 Your Site Name. All Rights Reserved. <a href="https://templatemag.com/bootstrap-templates/">Bootstrap templates</a> by TemplateMag.
+                        &copy; 2020 COTEIN. All Rights Reserved. <a href="https://templatemag.com/bootstrap-templates/"></a> .
                     </div>
                     <div class="col-sm-4">
                         <ul class="pull-right">

@@ -8,11 +8,12 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $name
+ * @property string|null $descripcion
  * @property string $mision
  * @property string $vision
  * @property string $nosotros
  * @property string $correo
- * @property string $telefono
+ * @property string|null $telefono
  * @property string|null $valores
  * @property string|null $rtn
  * @property string|null $logo
@@ -30,6 +31,7 @@ class Empresa extends Entity
      */
     protected $_accessible = [
         'name' => true,
+        'descripcion' => true,
         'mision' => true,
         'vision' => true,
         'nosotros' => true,

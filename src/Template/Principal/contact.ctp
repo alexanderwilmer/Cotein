@@ -4,34 +4,33 @@
             <div class="container">
                     <div class="gap"></div>
                     <div class="center gap fade-down section-heading">
-                        <h2 class="main-title">Get In Touch</h2>
+                        <h2 class="main-title">Contactenos</h2>
                         <hr>
-                        <p>Of an or game gate west face shed. ﻿no great but music too old found arose.</p>
+                        <p>Para cualquier pregunta contactenos por.</p>
                     </div>
                     <div class="gap"></div>
                     <div class="row">
                         <div class="col-md-4 fade-up">
-                            <h3>Contact Information</h3>
-                            <p><span class="icon icon-home"></span>Time Square, New York<br/>
-                                <span class="icon icon-phone"></span>+36 65984 405<br/>
+                            <h3>Información de contacto</h3>
+                            <p><span class="icon icon-home"></span>Honduras<br/>
+                                <!--
+                                <span class="icon icon-phone"></span>+<br/>
                                 <span class="icon icon-mobile"></span>+36 65984 405<br/>
-                                <span class="icon icon-envelop"></span> <a href="#">email@infinityteam.com</a> <br/>
-                                <span class="icon icon-twitter"></span> <a href="#">@infinityteam.com</a> <br/>
-                                <span class="icon icon-facebook"></span> <a href="#">Infinity Agency</a> <br/>
+                                -->
+                                <span class="icon icon-envelop"></span> <a href="#"><?= h($empresa->correo) ?>.</a> <br/>
                             </p>
                         </div><!-- col -->
 
                         <div class="col-md-8 fade-up">
-                            <h3>Drop Us A Message</h3>
+                            <h3>Envie un mensaje</h3>
                             <br>
                             <br>
                             <div id="message"></div>
                             <form method="post" action="sendemail.php" id="contactform">
                                 <input type="text" name="name" id="name" placeholder="Name" />
                                 <input type="text" name="email" id="email" placeholder="Email" />
-                                <input type="text" name="website" id="website" placeholder="Website" />
                                 <textarea name="comments" id="comments" placeholder="Comments"></textarea>
-                                <input class="btn btn-outlined btn-primary" type="submit" name="submit" value="Submit" />
+                                <input class="btn btn-outlined btn-primary" type="submit" name="submit" value="Enviar" />
                             </form>
                         </div><!-- col -->
                     </div><!-- row -->

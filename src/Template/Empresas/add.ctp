@@ -10,6 +10,8 @@
         <legend><?= __('Add Empresa') ?></legend>
         <?php
             echo $this->Form->control('name');
+            echo $this->Form->control('descripcion');
+
             echo $this->Form->control('mision');
             echo $this->Form->control('vision');
             echo $this->Form->control('nosotros');
