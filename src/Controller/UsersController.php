@@ -2,6 +2,9 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
+// Prior to 3.6 use Cake\Network\Exception\NotFoundException
+use Cake\Http\Exception\NotFoundException;
 
 /**
  * Users Controller
@@ -41,6 +44,9 @@ class UsersController extends AppController
 
     public function login()
     {
+
+        $this->viewBuilder()->layout('login');
+
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
             if ($user) {
