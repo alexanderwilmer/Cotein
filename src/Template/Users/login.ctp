@@ -1,5 +1,21 @@
+<div class="users form">
 <?= $this->Flash->render('auth') ?>
- 
+<?= $this->Form->create(['class'=>'login100-form validate-form p-b-33 p-t-5'] ) ?>
+    <fieldset>
+        <legend><?= __('Please enter your username and password') ?></legend>
+	<div class="wrap-input100 validate-input" data-validate = "Enter username">
+        
+        <?= $this->Form->input('username',['class'=>'input100']) ?>
+    </div>
+	<div class="wrap-input100 validate-input" data-validate = "Enter username">
+        <?= $this->Form->input('password',['class'=>'input100']) ?>
+    </div>
+    </fieldset>
+
+
+<?= $this->Form->button(__('Login')); ?>
+<?= $this->Form->end() ?>
+</div>
 
 
 <form class="login100-form validate-form p-b-33 p-t-5">

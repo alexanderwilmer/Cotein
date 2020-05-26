@@ -5,9 +5,8 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
- 
-
 use Cake\Auth\DefaultPasswordHasher;
+
 /**
  * Users Model
  *
@@ -94,5 +93,12 @@ class UsersTable extends Table
     }
 
     
-   
+    public function ValidatePassword() {
+        if ((isset($this->data[$this->alias]['password']) && isset($password['password2']))
+            && !empty($password['password2'])
+            && ($this->data[$this->alias]['password'] === $password['password2'])) {
+            return true;
+        }
+        return false;
+    }
 }

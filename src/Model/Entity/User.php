@@ -7,14 +7,21 @@ use Cake\ORM\Entity;
  * User Entity
  *
  * @property int $id
- * @property string|null $username
- * @property string|null $password
- * @property string|null $role
- * @property \Cake\I18n\FrozenTime|null $created
- * @property \Cake\I18n\FrozenTime|null $modified
+ * @property string $username
+ * @property string $foto
+ * @property string $password
+ * @property int $rol_id
+ * @property \Cake\I18n\Time $created
+ * @property \Cake\I18n\Time $modified
+ * @property string $email
+ * @property string $name
+ *
+ * @property \App\Model\Entity\Rol $rol
+ * @property \App\Model\Entity\DaHistorico[] $da_historicos
  */
 class User extends Entity
 {
+
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
@@ -25,18 +32,9 @@ class User extends Entity
      * @var array
      */
     protected $_accessible = [
-        'username' => true,
-        'password' => true,
-        'role' => true,
-        'created' => true,
-        'modified' => true,
+        '*' => true,
+        'id' => false
     ];
-
-
-    // ...
-
-  
-
 
     /**
      * Fields that are excluded from JSON versions of the entity.
@@ -44,6 +42,6 @@ class User extends Entity
      * @var array
      */
     protected $_hidden = [
-        'password',
+        'password'
     ];
 }
